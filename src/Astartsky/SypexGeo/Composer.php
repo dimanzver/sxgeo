@@ -46,7 +46,7 @@ class Composer
         curl_setopt($ch, CURLOPT_BINARYTRANSFER,true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_NOPROGRESS, 0);
+        curl_setopt($ch, CURLOPT_NOPROGRESS, 1);
         curl_setopt($ch, CURLOPT_PROGRESSFUNCTION, function ($clientp, $dltotal, $dlnow, $ultotal, $ulnow) use ($event, & $last) {
             if ($dltotal != 0) {
                 $now = number_format($dlnow / (1024 * 1024), 2);
